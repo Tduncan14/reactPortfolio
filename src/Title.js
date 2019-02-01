@@ -1,10 +1,10 @@
 import React,{Component} from 'react';
 
 const TITLES = [
-    "A software engineer",
-    "A chessplayer",
+    " I am a software engineer",
+    "a chessplayer",
     "an ethusiastic learner",
-    "Love a good film",
+    "I love  a good film",
     "I love trying to make the world a better place"
 ];
 
@@ -30,7 +30,7 @@ class Title extends Component {
     render(){
         const title = TITLES[this.state.titleIndex];
 
-        return( <p>I am {title}</p>)
+        return( <p> {title}</p>)
         
     }
 
