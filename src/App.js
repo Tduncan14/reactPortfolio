@@ -3,7 +3,7 @@ import React,{Component} from 'react';
 import Projects from './Projects';
 import SocialProfiles from './SocialProfiles';
 import profile from './assets/profile.png'
-
+import Title from './Title';
 class App  extends Component{
  
     state = {displayBio:false };
@@ -32,7 +32,8 @@ class App  extends Component{
        return(
            <div>
                <img src={profile} alt="profile" className="profile" />
-               <p>My name is Treek. I am  a software engineer</p>
+               <p>My name is Treek.</p>
+               <p><Title /></p>
                <p>I am always moving forward</p>
              {
                  this.state.displayBio ? (
