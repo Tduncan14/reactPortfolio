@@ -24090,7 +24090,7 @@ var Project = function Project(props) {
 
 var Projects = function Projects() {
   return _react.default.createElement("div", null, _react.default.createElement("h2", null, "Highlighted Projects"), _react.default.createElement("div", null, _projects.default.map(function (PROJECT) {
-    _react.default.createElement(Project, {
+    return _react.default.createElement(Project, {
       key: PROJECT.id,
       project: PROJECT
     });
@@ -24569,7 +24569,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53304" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55127" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);

@@ -10,7 +10,7 @@ import PROJECTS from '../data/projects';
             <img src={image} alt='profile'  style={{width:200,height:120}}/>
             <p>{description}</p>
             <a href={link}>{link}</a>
-           </div>);
+           </div>)
     
 }
 
@@ -21,15 +21,14 @@ const Projects = () => (
               <h2>Highlighted Projects</h2>
               <div>
                 {
-                    PROJECTS.map(PROJECT =>{
+                  PROJECTS.map(PROJECT =>(
                     <Project key ={PROJECT.id} project={PROJECT} />
 
                 
-                    })
-                }
+                ))
+                  }
               </div>
              </div>
-         
      )
 
 
