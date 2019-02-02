@@ -24008,11 +24008,11 @@ if ("development" === 'production') {
   module.exports = require('./cjs/react-dom.development.js');
 }
 },{"./cjs/react-dom.development.js":"../node_modules/react-dom/cjs/react-dom.development.js"}],"assets/project1.png":[function(require,module,exports) {
-module.exports = "/a0ccfacb187205c7f56af02d0e13da1c.png";
+module.exports = "/project1.0e13da1c.png";
 },{}],"assets/project2.png":[function(require,module,exports) {
-module.exports = "/dfe54836e78a76c8674eb364d48872d8.png";
+module.exports = "/project2.d48872d8.png";
 },{}],"assets/project3.png":[function(require,module,exports) {
-module.exports = "/928709773b8addf857b3d8ec592b562e.png";
+module.exports = "/project3.592b562e.png";
 },{}],"data/projects.js":[function(require,module,exports) {
 "use strict";
 
@@ -24155,13 +24155,13 @@ function (_Component2) {
 var _default = Projects;
 exports.default = _default;
 },{"react":"../node_modules/react/index.js","./data/projects":"data/projects.js"}],"assets/linkedin_icon.png":[function(require,module,exports) {
-module.exports = "/0d9bf58b4445ccf9eb3ef01732d4c8f5.png";
+module.exports = "/linkedin_icon.32d4c8f5.png";
 },{}],"assets/github_icon.png":[function(require,module,exports) {
-module.exports = "/b9ffeb2739f828d9d3bb0cb02b0f71f9.png";
+module.exports = "/github_icon.2b0f71f9.png";
 },{}],"assets/twitter_icon.png":[function(require,module,exports) {
-module.exports = "/9fe3c61be685f2956db6157138592594.png";
+module.exports = "/twitter_icon.38592594.png";
 },{}],"assets/email_icon.png":[function(require,module,exports) {
-module.exports = "/e5887790da161f5211d6cc4ad6c23642.png";
+module.exports = "/email_icon.d6c23642.png";
 },{}],"data/socialProfiles.js":[function(require,module,exports) {
 "use strict";
 
@@ -24304,7 +24304,7 @@ function (_Component2) {
 var _default = SocialProfiles;
 exports.default = _default;
 },{"react":"../node_modules/react/index.js","./data/socialProfiles":"data/socialProfiles.js"}],"assets/profile.png":[function(require,module,exports) {
-module.exports = "/238a4cee4aa23911dbf469b4ae7bce2d.png";
+module.exports = "/profile.ae7bce2d.png";
 },{}],"Title.js":[function(require,module,exports) {
 "use strict";
 
@@ -24337,7 +24337,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-var TITLES = [" I am a software engineer", "a chessplayer", "an ethusiastic learner", "I love  a good film", "I love trying to make the world a better place"];
+var TITLES = ['a software engineer', 'a chessplayer', 'an enthusiastic learner', 'person who tries make a world place while he is here'];
 
 var Title =
 /*#__PURE__*/
@@ -24358,16 +24358,24 @@ function (_Component) {
     _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(Title)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
-      titleIndex: 0
+      titleIndex: 0,
+      fadeIn: true
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "animatedTitles", function () {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "animateTitles", function () {
       _this.titleInterval = setInterval(function () {
         var titleIndex = (_this.state.titleIndex + 1) % TITLES.length;
 
         _this.setState({
-          titleIndex: titleIndex
+          titleIndex: titleIndex,
+          fadeIn: true
         });
+
+        _this.timeout = setTimeout(function () {
+          return _this.setState({
+            fadeIn: false
+          });
+        }, 2000);
       }, 4000);
     });
 
@@ -24377,18 +24385,31 @@ function (_Component) {
   _createClass(Title, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      this.animatedTitles();
+      var _this2 = this;
+
+      this.timeout = setTimeout(function () {
+        return _this2.setState({
+          fadeIn: false
+        });
+      }, 2000);
+      this.animateTitles();
     }
   }, {
     key: "componentWillUnmount",
     value: function componentWillUnmount() {
       clearInterval(this.titleInterval);
+      clearTimeout(this.timeout);
     }
   }, {
     key: "render",
     value: function render() {
-      var title = TITLES[this.state.titleIndex];
-      return _react.default.createElement("p", null, title);
+      var _this$state = this.state,
+          fadeIn = _this$state.fadeIn,
+          titleIndex = _this$state.titleIndex;
+      var title = TITLES[titleIndex];
+      return _react.default.createElement("p", {
+        className: fadeIn ? 'title-fade-in' : 'title-fade-out'
+      }, "I am ", title);
     }
   }]);
 
@@ -24603,7 +24624,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57147" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61012" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
