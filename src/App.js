@@ -33,7 +33,7 @@ class App  extends Component{
            <div>
                <img src={profile} alt="profile" className="profile" />
                <p>My name is Treek.</p>
-               <p><Title /></p>
+             < Title />
                <p>I am always moving forward</p>
              {
                  this.state.displayBio ? (
