@@ -24341,6 +24341,13 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+var Joke = function Joke(_ref) {
+  var joke = _ref.joke;
+  var setup = joke.setup,
+      punchline = joke.punchline;
+  return _react.default.createElement("p", null, setup, " ", _react.default.createElement("em", null, punchline));
+};
+
 var Jokes =
 /*#__PURE__*/
 function (_Component) {
@@ -24396,15 +24403,15 @@ function (_Component) {
       var _this$state$joke = this.state.joke,
           setup = _this$state$joke.setup,
           punchline = _this$state$joke.punchline;
-      return _react.default.createElement("div", null, _react.default.createElement("h2", null, "Section Joke"), _react.default.createElement("p", null, setup, _react.default.createElement("em", null, punchline)), _react.default.createElement("hr", null), _react.default.createElement("h3", null, "Want more jokes"), _react.default.createElement("button", {
+      return _react.default.createElement("div", null, _react.default.createElement("h2", null, "Section Joke"), _react.default.createElement(Joke, {
+        joke: this.state.joke
+      }), _react.default.createElement("hr", null), _react.default.createElement("h3", null, "Want more jokes"), _react.default.createElement("button", {
         onClick: this.fetchJokes
       }, " Press the Button"), this.state.jokes.map(function (joke) {
-        var id = joke.id,
-            setup = joke.setup,
-            punchline = joke.punchline;
-        return _react.default.createElement("p", {
-          key: id
-        }, setup, " ", _react.default.createElement("em", null, punchline));
+        return _react.default.createElement(Joke, {
+          key: joke.id,
+          joke: joke
+        });
       }));
     }
   }]);
@@ -24622,7 +24629,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56913" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59347" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
