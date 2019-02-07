@@ -10,9 +10,9 @@ import index from './index.css';
 
 
 
-ReactDOM.render(<Router>
+ReactDOM.render(<Router history={createBrowserHistory()}>
     <Switch>
-        <Route path='/' component={App} />
+        <Route  exact path='/' component={App} />
         <Route path='/jokes'component={Jokes} />
     </Switch>
 </Router>,document.getElementById('root'));

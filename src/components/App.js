@@ -4,7 +4,7 @@ import Projects from './Projects';
 import SocialProfiles from './SocialProfiles';
 import profile from '../assets/profile.png'
 import Title from './Title';
-import Jokes from './Jokes';
+
 class App  extends Component{
  
     state = {displayBio:false };
@@ -54,8 +54,6 @@ class App  extends Component{
              <hr />
 
              <SocialProfiles />
-             <hr />
-             <Jokes />
            </div>
 
        )
