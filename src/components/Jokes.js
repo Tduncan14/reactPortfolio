@@ -8,14 +8,14 @@ class Jokes extends Component{
     state = {joke:{} ,jokes:[] };
 
     componentDidMount(){
-        fetch('https://official-joke-api.appspot.com/random_joke', {mode: 'no-cors'} )
+        fetch('https://official-joke-api.appspot.com/random_joke' )
         .then((response) =>response.json())
         .then( (json) =>this.setState({joke:json}))
         .catch(error => alert(`api call has reached it limit for the hour,sorry  ${error.message}`));
  }
 
  fetchJokes=()=>{ 
-     fetch('https://official-joke-api.appspot.com/random_ten',{ mode: 'no-cors' })
+     fetch('https://official-joke-api.appspot.com/random_ten')
      .then(response => response.json())
      .then(json => this.setState({jokes: json}))
      .catch(error => alert(`api call has reached it limit for the hour, sorry  ${error.message}`));
